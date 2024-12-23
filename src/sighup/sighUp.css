@@ -1,0 +1,58 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-cont-sighup{
+    width: 100%;
+    height: 100vh;
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.form-cont-sighup{
+    width: 350px;
+   background-color: white;
+   
+   padding: 15px;
+   border-radius: 10px;
+   box-shadow: 1px 2px 8px black;
+   position: relative;
+}
+.form-cont-sighup img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(1px 3px 10px black);
+
+
+}
+.sgn-btn{
+    text-align: center;
+    margin-top: 15px;
+
+}
+.sgn-btn button{
+    width: 80%;
+    height: 38px;
+    border-radius: 20px;
+    background: linear-gradient(to left,rgb(172, 231, 254),rgb(255, 228, 228));
+    background-color: transparent;
+   border: none;
+   box-shadow: 1px 2px 10px black;
+    outline: none;
+height: 40px;
+}
+.validation-signUp{
+    text-align: center;
+    margin-top: 20px;
+}
