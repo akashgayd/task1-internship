@@ -1,28 +1,52 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
+
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 
 const Login = () => {
-  const [email, setemail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setemail] = useState({
+
+    email: ""
+  });
+  const [password, setPassword] = useState({
+    password: ""
+  });
+
+  
 
   const navigate = useNavigate();
 
 
-  let name = "akash@gmail.com";
-  let pass = 123456;
+  const navigater = () => {
 
-  if (name == "akash@gmail.com" && pass == 123456) {
+    setemail({ ...email, email: "akash@gmail.com" });
+    setPassword({ ...password, password: "akash123" });
 
-    navigate("/");
+    if (email === "akash@gmail.com") {
+
+      if (password === "akash123") {
+
+        navigate("/mainHome");
+      }
+    }
+
+
+
   }
 
+
+  
+
   const handleSubmit = async (e) => {
+
+
+
 
     e.preventDefault();
 
@@ -30,6 +54,7 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password)
+
 
 
 
@@ -67,7 +92,7 @@ const Login = () => {
           </div>
 
           <div className='sgn-btn'>
-            <button type='submit'>Submit</button>
+            <button type='submit' onClick={navigater}>Submit</button>
           </div>
           <div className='validation-signUp'>
             <p>You don't have Account  / <Link to="/sighup"> Sign Up</Link></p>

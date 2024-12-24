@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import './sighUp.css';
-import { useState } from 'react';
+import {  useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
@@ -13,7 +15,7 @@ const SighUp =()=>{
 
   const navigate = useNavigate(); 
 
-
+ 
   const handleSubmit= async(e)=>{
 
     e.preventDefault();
@@ -37,6 +39,7 @@ const SighUp =()=>{
         <>
 
 <div className='main-cont-sighup'>
+  <div className='new-itm-signup'></div>
 
         <form className='form-cont-sighup' onSubmit={handleSubmit}>
           <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" alt="" />
@@ -59,6 +62,7 @@ const SighUp =()=>{
   </div>
 </form>
 </div>
+
 </>
     )
 
